@@ -14,10 +14,6 @@ UU 加速器插件（`uu`）将网易 UU 主机加速器的路由器接入能力
 
 Go 编写的守护进程，是插件的核心。`start.sh` 拉起它后，`uud` 负责所有后续工作：
 
-```
-uud -pkg <插件目录> -port <端口>
-```
-
 **功能：**
 
 1. **状态页** — 在 `:7615` 提供 HTTP 状态页和 JSON API
@@ -55,9 +51,9 @@ uud 检测到 activate_status → 持久化到 app/cache/activate_status
 
 ## 4. 插件配置
 
-安装后打开 http://192.168.9.1:7615 默认端口：**7615**（可通过环境变量 `UU_WEB_PORT` 修改）
+安装后，可在“应用市场-已安装-网易UU加速器-日志”看到绑定状态
 
-![uud](https://img.meituan.net/content/9851a4f7daac659bd3b858bdab574f9e112051.png)
+![log](https://img.meituan.net/csc/aa28652ffe6b6605aa3c3e75a37fee2897172.png)
 
 此时为[等待绑定]状态，使用手机下载「UU 主机加速器」，一般应用市场都有。
 
@@ -75,7 +71,7 @@ App 下载：https://adl.netease.com/d/g/uu/c/uu_router
 
 此时Web 将会显示已绑定
 
-![bindsucc](https://img.meituan.net/content/6a4e0586ed0e60aeea7e863cc992b9a932050.png)
+![done](https://img.meituan.net/csc/0d2104c50d317475c3e256d0791a7cb057698.png)
 
 ### 加速游戏主机
 
