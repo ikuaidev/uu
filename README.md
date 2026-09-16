@@ -16,14 +16,13 @@ Go 编写的守护进程，是插件的核心。`start.sh` 拉起它后，`uud` 
 
 **功能：**
 
-1. **状态页** — 在 `:7615` 提供 HTTP 状态页和 JSON API
-2. **插件管理** — 从 `router.uu.163.com` 查询 `uuplugin` 最新版本，按需下载，MD5 校验后解压到 `/tmp/uu/`
-3. **缓存** — `uuplugin` 压缩包持久化到 `app/cache/uu.tar.gz`，重启后直接使用本地缓存（首次启动约 5 秒，有缓存 < 2 秒）
-4. **Supervisor** — 每 5 秒检查 `uuplugin` 存活，崩溃自动重启
-5. **云控响应**：
+1. **插件管理** — 从 `router.uu.163.com` 查询 `uuplugin` 最新版本，按需下载，MD5 校验后解压到 `/tmp/uu/`
+2. **缓存** — `uuplugin` 压缩包持久化到 `app/cache/uu.tar.gz`，重启后直接使用本地缓存（首次启动约 5 秒，有缓存 < 2 秒）
+3. **Supervisor** — 每 5 秒检查 `uuplugin` 存活，崩溃自动重启
+4. **云控响应**：
    - 检测到 `/tmp/uu/uu.update` → 热更新（下载新版重启）
    - 检测到 `/tmp/uu/uu.uninstall` → 云端解绑，重置 `.sn`
-6. **每小时** 向 `router.uu.163.com` 检查更新，发现新版本入库
+5. **每小时** 向 `router.uu.163.com` 检查更新，发现新版本入库
 
 ### `uuplugin`
 
